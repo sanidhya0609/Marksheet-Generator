@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parul University - Marksheet Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="university-header">
+            <div class="logo-section">
+                <img src="parul-logo.png.svg" alt="Parul University Logo" class="logo">
+                <div class="university-info">
+                    <h1>PARUL UNIVERSITY</h1>
+                    <p>Faculty of Engineering & Technology</p>
+                    <p>Vadodara, Gujarat, India</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="form-section" id="inputForm">
+            <h2>Student Details</h2>
+            <form id="marksheetForm">
+                <div class="form-group">
+                    <label for="studentName">Student Name:</label>
+                    <input type="text" id="studentName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rollNumber">Roll Number:</label>
+                    <input type="number" id="rollNumber" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="numSubjects">Number of Subjects:</label>
+                    <input type="number" id="numSubjects" min="1" max="10" required>
+                </div>
+                
+                <button type="button" onclick="generateSubjectFields()">Add Subject Fields</button>
+                
+                <div id="subjectFields"></div>
+                
+                <button type="button" onclick="generateMarksheet()" id="generateBtn" style="display:none;">Generate Marksheet</button>
+            </form>
+        </div>
+
+        <div class="marksheet-section" id="marksheetDisplay" style="display:none;">
+            <div class="marksheet">
+                <div class="marksheet-header">
+                    <img src="parul-logo.png.svg" alt="Parul University Logo" class="marksheet-logo">
+                    <div class="marksheet-title">
+                        <h1>PARUL UNIVERSITY</h1>
+                        <h2>STUDENT MARKSHEET</h2>
+                        <p>Faculty of Engineering & Technology</p>
+                    </div>
+                </div>
+                
+                <div class="student-details">
+                    <div class="detail-row">
+                        <span class="label">Name:</span>
+                        <span id="displayName"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Roll No.:</span>
+                        <span id="displayRoll"></span>
+                    </div>
+                </div>
+                
+                <table class="marks-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Marks Obtained</th>
+                            <th>Maximum Marks</th>
+                        </tr>
+                    </thead>
+                    <tbody id="marksTableBody">
+                    </tbody>
+                </table>
+                
+                <div class="result-section">
+                    <div class="result-row">
+                        <span class="label">Total Marks:</span>
+                        <span id="totalMarks"></span>
+                    </div>
+                    <div class="result-row">
+                        <span class="label">Percentage:</span>
+                        <span id="percentage"></span>
+                    </div>
+                    <div class="result-row">
+                        <span class="label">Grade:</span>
+                        <span id="grade"></span>
+                    </div>
+                    <div class="result-row">
+                        <span class="label">Result:</span>
+                        <span id="result"></span>
+                    </div>
+                </div>
+                
+                <div class="signature-section">
+                    <div class="signature">
+                        <p>Controller of Examinations</p>
+                        <p>Parul University</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button onclick="printMarksheet()">Print Marksheet</button>
+                <button onclick="resetForm()">Generate New Marksheet</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

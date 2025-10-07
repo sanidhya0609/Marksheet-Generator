@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.university-header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+    padding: 5px;
+}
+
+.university-info h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.university-info p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.form-section {
+    padding: 40px;
+}
+
+.form-section h2 {
+    color: #1e3c72;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #1e3c72;
+}
+
+button {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin: 10px 5px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.subject-field {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.subject-field input {
+    flex: 1;
+}
+
+.marksheet {
+    background: white;
+    margin: 20px;
+    padding: 40px;
+    border: 3px solid #1e3c72;
+    border-radius: 10px;
+}
+
+.marksheet-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #1e3c72;
+}
+
+.marksheet-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.marksheet-title {
+    text-align: center;
+}
+
+.marksheet-title h1 {
+    color: #1e3c72;
+    font-size: 2.2em;
+    margin-bottom: 5px;
+}
+
+.marksheet-title h2 {
+    color: #2a5298;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.marksheet-title p {
+    color: #666;
+    font-size: 1em;
+}
+
+.student-details {
+    margin-bottom: 30px;
+}
+
+.detail-row, .result-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.label {
+    font-weight: bold;
+    color: #1e3c72;
+}
+
+.marks-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.marks-table th, .marks-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.marks-table th {
+    background: #1e3c72;
+    color: white;
+    font-weight: bold;
+}
+
+.marks-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.result-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.signature-section {
+    text-align: right;
+    margin-top: 40px;
+}
+
+.signature p {
+    margin: 5px 0;
+    font-weight: bold;
+    color: #1e3c72;
+}
+
+.action-buttons {
+    text-align: center;
+    padding: 20px;
+}
+
+#grade {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#result {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.pass {
+    color: #28a745;
+}
+
+.fail {
+    color: #dc3545;
+}
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .form-section, .action-buttons {
+        display: none;
+    }
+    
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+    
+    .marksheet {
+        margin: 0;
+        border: 2px solid #000;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .university-info h1 {
+        font-size: 2em;
+    }
+    
+    .marksheet-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .subject-field {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .detail-row, .result-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
